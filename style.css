@@ -212,27 +212,199 @@ header .logo a{
         rgba(0,0,0,0.5)
     ),url("./media/xaco.jpg");
 
-
 }
 
-#caracteristicas .container{
+/*GALERIA*/
+
+.linea{
+    background-color: blueviolet;
+    height: 5px;
+    width: 100%;
+    display: block;
+}
+
+#galeria h2{
+    font-weight: 400;
     text-align: center;
-    padding: 250px 12px;
+    padding: 20px;
+    font-size: 40px;
 }
 
-#caracteristicas li{
-    margin: 16px 0px;
+#galeria .container-galeria{
+    display: block;
+
+}
+#galeria img{
+    width: 100%;
+    vertical-align: top;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s;
+    
+}
+
+.container-galeria > a{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+
+}
+
+.container-galeria a:hover img{
+    filter: blur(2px);
+    transform: rotate(10deg) scale(1.3);
+}
+
+.light-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0) ;
+
+
+}
+
+.light-box img{
+    width: 75vw;
+    max-height: 70vh;
+
+}
+
+.light-box:target{
+    transform:scale(1);
+}
+
+.close{
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background-color: blueviolet;
+    color: white;
+    text-align: none;
+    width: 40px ;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+
+}
+
+.next{
+    display: block;
+    background-color: blueviolet;
+    color: white;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+/*CONTACTO*/
+
+#contacto {
+    height: 100vh;
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url("./media/contacto.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        transition: .5s ease all;
+}
+#contacto .container{
+    padding: 50px;   
+}
+
+.container .form .form-header .form-title{
     font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    color: blueviolet;
+    text-align: center;
+    padding: 14px 0;
+}
+.container .form .form-header .form-title span{
+    color: white;
 }
 
+.container .form {
+    background: rgba(0,0,0, .5);
+    width: auto;
+    max-width: 650px;
+    margin: auto;
+    padding: 5px 35px;
+    margin-top: 35px;
+    
+    border-radius: 3px;
+}
+
+.container .form .form-label{
+    display: block;
+    color: rgb(194, 143, 241);
+    font-size: 1em;
+    position:relative;
+}
+
+.container .form .form-input, .text-area{
+    background: rgba(0,0,0, .7);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid blueviolet;
+    width: 100%;
+    padding: 12px 2px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+
+}
+
+.container .form .text-area{
+    resize:vertical;
+    max-height: 150px;
+    min-height: 50px;
+}
+
+.container .form .btn-submit{
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+    background-color: blueviolet;
+    font-size: 16px;
+    border: none;
+    color: white;
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all .5s ease;
+
+}
+
+.container .form .btn-submit:hover{
+    color: rgb(194, 143, 241);
+    background: rgba(0,0,0, .5);;
+}
 #final{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(30,30,30) ;
-    color: white;
+    color: rgb(0, 0, 0);
     height: 80vh;
 }
 #final h2{
@@ -319,7 +491,7 @@ footer .container{
    
     #roles .rol{
         display: flex;
-        justify-content: center;
+        justify-content:center;
     }
 
     #roles p{
@@ -332,6 +504,7 @@ footer .container{
     #roles .carta{
         display: flex;
         flex-direction: column;
+        justify-content: space-between;;
         padding: 15px;
     }
 
@@ -343,8 +516,19 @@ footer .container{
         font-size: 2em;
     }
     
-    
+    /*GALERIA*/
+    #galeria .container-galeria{
+        margin: auto;
+        
+        padding: 40px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(350px,1fr) );
+        grid-gap: 10px;
 
+    
+    }
+  
 }
 
 @media (min-width:1200px){
@@ -358,13 +542,19 @@ footer .container{
     width: 90%;    
     margin: 0 auto;
     }
-    #características{
-    width: 90%;    
-    margin: 0 auto;
+    
+    #galeria{
+        width: 90%;
+        margin: 0 auto;
     }
     
     #final{
     width: 90%;    
     margin: 0 auto;
     }
+
+    #contacto {
+        width: 90%;    
+        margin: 0 auto;
+        }
 }
