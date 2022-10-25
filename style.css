@@ -12,9 +12,25 @@ ul{ list-style: none;}
 li{ font-size: 1.25em;}
 
 body{
+    
     font-family: 'Raleway', sans-serif;
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+	grid-template-rows: repeat(7, auto);
+    Grid-template-areas: "header"
+						 "hero"
+                         "somos-loleros"
+						 "roles"
+                         "final"
+                         "galeria"
+                         "contacto"
+                         "footer";
+
+                         
+  
 }
+
 
 button{
     font-size: 1.5em;
@@ -32,7 +48,7 @@ button:hover{
 }
 
 .container{
-    max-width: 1400px;
+    
     margin: auto;
 }
 .color-acento{
@@ -40,6 +56,7 @@ button:hover{
 }
 
 header{
+    grid-area:header;
     background-color: rgb(245,245,245);
 }
 
@@ -77,6 +94,7 @@ header .logo a{
 }
 
 #hero{
+    grid-area: hero;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,8 +113,11 @@ header .logo a{
     transition: .5s ease all;
    
 }
+
 #hero h1{
     color:white;
+    margin: 10px;
+    text-align: center;
 
 }
 
@@ -106,8 +127,6 @@ header .logo a{
 }
 #hero button:hover{
     transform: scale(1.05);
-  
-
 }
 
 #hero a{
@@ -121,22 +140,42 @@ header .logo a{
     opacity: .3;
    
 }
+#somos-loleros{
+    grid-area:somos-loleros;
+    
+}
     
 #somos-loleros .container{
-    text-align: center;
-    padding: 200px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 5px;
 }
 
-.video-responsive{
-    
-    overflow:hidden;
-    padding-bottom:400px; 
-    position:relative;
-    height:0;
-}
+#somos-loleros .texto{
+    width: 100%;
+    text-align:center;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} 
+
+
+#somos-loleros .video-responsive{
+    width: 100%;
+    height: 500px;
+    text-align:center;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} 
+
 
 
 #roles{
+    grid-area: roles;
     background-color: rgb(30,30,30);
     color:white;
     text-align: center;
@@ -214,7 +253,75 @@ header .logo a{
     ),url("./media/xaco.jpg");
 
 }
+/*FINAL*/
 
+#final{
+    grid-area:final;
+}
+#final .container{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 5px;
+    
+}
+
+#final .texto-final{
+    width: 100%;
+    text-align:center;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} 
+
+
+.slider-frame {
+    width: auto ;
+    height: auto;
+    margin: 50px auto 0 ;
+    overflow: hidden;
+    
+
+}
+
+.slider-frame ul{
+    display: flex;
+    padding: 0%;
+    width: 300%;
+    animation: slide 15s infinite  ease-in-out;
+    
+}
+
+.slider-frame li{
+    list-style: none;
+    width: 100%;
+
+}
+
+.slider-frame img{
+    width: 100%;
+}
+
+@keyframes slide {
+     0%{margin-left: 0%;}
+    28%{margin-left: 0;}
+
+    33%{margin-left: -100%;}
+    63%{margin-left: -100%;}
+
+    68%{margin-left: -200%;}
+    95%{margin-left: -200%;}
+
+    /*60%{margin-left: -300%;}
+    75%{margin-left: -300%;}
+
+    80%{margin-left: -400%;}
+    95%{margin-left: -400%;}*/
+
+
+}
 /*GALERIA*/
 
 .linea{
@@ -225,26 +332,46 @@ header .logo a{
     
 }
 
+#galeria{
+    grid-area: galeria;
+    background-color: rgb(30,30,30);
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
 #galeria h2{
-    font-weight: 400;
+    margin: 0%;
+    font-size: 3.2em;
+    color: white;
     text-align: center;
     padding: 20px;
-    font-size: 40px;
+    
+}
+
+#galeria h3{
+    margin: 0%;
+    color: white;
+    text-align: center;
+    font-size: 1.3em;
+   
+    
 }
 
 #galeria .container-galeria{
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin: auto;
     overflow: hidden;
-    
+    gap: 10px;
 
 }
 #galeria img{
+    
     width: 100%;
     vertical-align: top;
     height: 300px;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: all 0.3s ease-in-out;
    
 }
 
@@ -252,6 +379,7 @@ header .logo a{
     display: block;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 
 }
@@ -265,7 +393,7 @@ header .logo a{
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
     height: 100vh;
     z-index: 1000;
@@ -277,11 +405,19 @@ header .logo a{
 
 
 }
+.light-box h1{
+    display: block;
+    position: absolute;
+    margin: auto;
+    padding-top: 170px;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
 
 .light-box img{
     width: 75vw;
-    max-height: 70vh;
-
+    max-height: 90vh;
 }
 
 .light-box:target{
@@ -295,7 +431,7 @@ header .logo a{
     right: 40px;
     background-color: blueviolet;
     color: white;
-    text-align: none;
+    text-decoration: none;
     width: 40px ;
     height: 40px;
     text-align: center;
@@ -313,12 +449,16 @@ header .logo a{
     line-height: 30px;
     text-decoration: none;
     text-align: center;
-
 }
+
+
+
 
 /*CONTACTO*/
 
 #contacto {
+    grid-area: contacto;
+    margin-top: 40px;
     height: 100vh;
         background-image: linear-gradient(
             0deg,
@@ -353,7 +493,6 @@ header .logo a{
     margin: auto;
     padding: 5px 35px;
     margin-top: 35px;
-    
     border-radius: 3px;
 }
 
@@ -403,24 +542,10 @@ header .logo a{
     color: rgb(194, 143, 241);
     background: rgba(0,0,0, .5);;
 }
-#final{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    height: 80vh;
-}
-#final h2{
-    font-size: 9vw;
-}
 
-#final button{
-    font-size: 5vw;
-}
-
+/*FOOTER*/
 footer{
+    grid-area: footer;
     background-color: (230,230,230);
 }
 
@@ -438,13 +563,13 @@ footer .container{
     justify-content: center;
     align-items: flex-end;
 }
-
+/******************************MÁS DE 720 PX **********************/
 @media (min-width:720px){
     header{
         position:fixed;
         width: 100%;
         z-index: 1000;
-        
+    
 
     }
     header .container{
@@ -469,32 +594,39 @@ footer .container{
 
     #hero p{
         display: block;
-
-        
+        text-align: center;       
         margin: 20px 20px;
     }
 
     #somos-loleros .container{
         display: flex;
+        flex-direction: row;
+        justify-content:center;
         align-items: center;
-        justify-content: space-evenly;
+        max-width: 1400px;
+
+        
     }
 
     #somos-loleros .texto{
-        width: 50%;
-        max-width: 600px;
+        width: 400px;
+        overflow: hidden;
         text-align: initial;
         padding: 0px 30px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+        
+        
     } 
+
     #somos-loleros h2{
         margin-top: 0%;
 
     }  
+   
     #somos-loleros .video-responsive{
-        padding-top: 60px;
+        
+        max-width: 600px;
+        
+    
     } 
    
     #roles .rol{
@@ -515,30 +647,51 @@ footer .container{
         justify-content: space-between;;
         padding: 15px;
     }
-
-    #final h2{
-        font-size: 5em;
-    }
     
-    #final button{
-        font-size: 2em;
+
+    #final .container{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        max-width: 1400px;
+
+        
     }
+
+    #final .texto{
+        width: 400px;
+        overflow: hidden;
+        text-align: initial;
+        padding: 0px 30px;
+        
+        
+    } 
+    
     
     /*GALERIA*/
     #galeria .container-galeria{
         margin: auto;
-        
         padding: 40px;
         overflow: hidden;
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(350px,1fr) );
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr) );
         grid-gap: 10px;
+       
+    }
+
+    .light-box h1{
+        padding-top: 400px;
+        font-size: 3em;
+    }
 
     
+    #contacto{
+        margin: 50px auto;
     }
   
 }
-
+/******************************MÁS DE 1200 PX **********************/
 @media (min-width:1200px){
 
     #hero{
@@ -551,6 +704,15 @@ footer .container{
     margin: 0 auto;
     }
     
+    #somos-loleros .container{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        align-items: center;
+        max-width: 1400px;
+
+        
+    }
     #galeria{
         width: 90%;
         margin: 0 auto;
@@ -563,6 +725,12 @@ footer .container{
 
     #contacto {
         width: 90%;    
-        margin: 0 auto;
+        margin: 50px auto;
         }
+
+    .light-box h1{
+            padding-top: 650px;
+            font-size: 4em;
+    }
+    
 }
