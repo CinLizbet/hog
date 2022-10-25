@@ -263,7 +263,7 @@ header .logo a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 100px 5px;
+    padding: 100px 0px;
     
 }
 
@@ -279,7 +279,7 @@ header .logo a{
 
 .slider-frame {
     width: auto ;
-    height: auto;
+    height: 300px;
     margin: 50px auto 0 ;
     overflow: hidden;
     
@@ -563,6 +563,34 @@ footer .container{
     justify-content: center;
     align-items: flex-end;
 }
+.quoteContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    padding: 20px;
+    width: 80%;
+    border: 1px solid blueviolet;
+    border-radius: 20px;
+    color:rgb(100,100,100)
+}
+
+#quote {
+    font-family: "Bradley Hand ITC";
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+}
+
+#author {
+    margin-top: 10px;
+    text-align: center;
+    font-family: "Bradley Hand ITC";
+    font-size: 15px;
+}
+
+
+
+
 /******************************MÁS DE 720 PX **********************/
 @media (min-width:720px){
     header{
