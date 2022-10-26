@@ -253,7 +253,7 @@ header .logo a{
     ),url("./media/xaco.jpg");
 
 }
-/*FINAL*/
+/*FINAL  SLIDER*/
 
 #final{
     grid-area:final;
@@ -279,7 +279,7 @@ header .logo a{
 
 .slider-frame {
     width: auto ;
-    height: 300px;
+    
     margin: 50px auto 0 ;
     overflow: hidden;
     
@@ -290,6 +290,7 @@ header .logo a{
     display: flex;
     padding: 0%;
     width: 300%;
+    height: 600px;
     animation: slide 15s infinite  ease-in-out;
     
 }
@@ -297,6 +298,7 @@ header .logo a{
 .slider-frame li{
     list-style: none;
     width: 100%;
+   
 
 }
 
@@ -656,6 +658,11 @@ footer .container{
         
     
     } 
+
+    .slider-frame ul{
+        height: 500px;
+
+    }
    
     #roles .rol{
         display: flex;

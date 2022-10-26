@@ -4,7 +4,7 @@ fetch("https://quotes15.p.rapidapi.com/quotes/random/?language_code=en", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "quotes15.p.rapidapi.com",
-		"x-rapidapi-key": "fd46724b6emshfea79a22145d40dp1c698ejsn260fb6077c28"
+		"x-rapidapi-key": "554a814fe3msh36affc4f116fd13p17ef78jsn0dacc06ef7b1"
 	}
 })
 .then(response => response.json())
